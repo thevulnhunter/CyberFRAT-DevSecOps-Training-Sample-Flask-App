@@ -29,14 +29,13 @@ stages {
           }
         }
       }
-  
+    }
     stage('Test Run') {
       steps {
         sh 'docker run -d $registry:$BUILD_NUMBER'
       }
     }
   } 
-} 
 }
         
       
