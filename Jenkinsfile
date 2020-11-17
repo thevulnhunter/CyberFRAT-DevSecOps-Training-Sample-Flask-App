@@ -9,10 +9,8 @@ pipeline {
 stages {
     stage('checking for secret') {
       steps {
-        script {  
-       sh "docker run dxa4481/trufflehog:latest --json https://github.com/thevulnhunter/CyberFRAT-DevSecOps-Training-Sample-Flask-App.git > trufflehog.json"
+          sh "docker run dxa4481/trufflehog:latest --json https://github.com/thevulnhunter/CyberFRAT-DevSecOps-Training-Sample-Flask-App.git > trufflehog.json"
           sh "cat trufflehog.json"
-    }
       }
     }
     stage('Build Docker Image') {
